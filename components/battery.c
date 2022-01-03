@@ -33,7 +33,7 @@
 		char path[PATH_MAX];
 
 		if (esnprintf(path, sizeof(path),
-		              "/sys/class/power_supply/%s/capacity", bat) < 0) {
+		              "/sys/class/power_supply/BAT0/capacity", bat) < 0) {
 			return NULL;
 		}
 		if (pscanf(path, "%d", &perc) != 1) {

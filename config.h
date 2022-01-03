@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "n/a ";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -63,11 +63,17 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	//{ datetime, "%s",           "%F %T" },
+//	{ datetime, "%s",           "%F %T" },
 	//{ wifi_perc, "W: (%3s%% on ", "wlp8s0" },
-   { netspeed_rx, " %sB/s | ", "enp9s0" },
-	{ run_command, " : %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ cpu_perc, " [CPU  %s%%]  | ", NULL	      },
+   { netspeed_rx, " %sB/s | ", "wlp4s0" },
+	{ run_command, "  %4s%% |" , "bt.sh" },
+   { run_command, " : %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+//	{ cpu_perc, " [CPU  %s%%]  | ", NULL	      },
+    { temp, " [CPU %s 糖] | " , "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input"}, 
 	{ ram_perc, " [RAM  %s%%]   | ", NULL	      },
-	{ datetime, "%s",           "%a %b %d %r" },
+    { battery_perc, "  %s %% | ", "/sys/class/power_supply/BAT0/capacity"}, 
+//	{ datetime, "%s",           "%a %b %d %r" },
+    { datetime, " %s",                 "%F | %r"},
+
+
 };
