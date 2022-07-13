@@ -69,7 +69,7 @@ static const struct arg args[] = {
 	{ run_command, "  %4s%% |" , "bt.sh" },
    { run_command, " : %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 //	{ cpu_perc, " [CPU  %s%%]  | ", NULL	      },
-    { temp, " [CPU %s 糖] | " , "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input"}, 
+    { temp, " [CPU %s 糖] | " , "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input"}, 
 	{ ram_perc, " [RAM  %s%%]   | ", NULL	      },
     { battery_perc, "  %s %% | ", "/sys/class/power_supply/BAT0/capacity"}, 
 //	{ datetime, "%s",           "%a %b %d %r" },
